@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Database - Everest Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Lead Qualification Database</h1>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="p-4">Session ID</th>
+                            <th class="p-4">Status</th>
+                            <th class="p-4">Budget</th>
+                            <th class="p-4">Type</th>
+                            <th class="p-4">Location</th>
+                            <th class="p-4">Score</th>
+                            <th class="p-4">Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:8002/admin/sessions');
+                const sessions = await response.json();
+                
+                const tbody = document.getElementById('table-body');
+                tbody.innerHTML = '';
+
+                sessions.forEach(session => {
+                    const profile = session.lead_profile || {};
+                    const row = `
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-mono text-sm text-blue-600">${session.session_id.substring(0, 8)}...</td>
+                            <td class="p-4">
+                                <span class="px-2 py-1 rounded-full text-xs font-bold ${paramsStatusColor(session.qualification_status)}">
+                                    ${session.qualification_status}
+                                </span>
+                            </td>
+                            <td class="p-4">${profile.budget_range || '-'}</td>
+                            <td class="p-4">${profile.property_type || '-'}</td>
+                            <td class="p-4">${profile.target_location || '-'}</td>
+                            <td class="p-4 font-bold text-gray-700">${profile.lead_score}</td>
+                            <td class="p-4 text-sm text-gray-500">${new Date(session.updated_at).toLocaleString()}</td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('table-body').innerHTML = '<tr><td colspan="7" class="p-4 text-center text-red-500">Error loading data. Ensure backend is running.</td></tr>';
+            }
+        }
+
+        function paramsStatusColor(status) {
+            if (status === 'QUALIFIED') return 'bg-green-100 text-green-800';
+            if (status === 'DISCOVERY') return 'bg-blue-100 text-blue-800';
+            return 'bg-gray-100 text-gray-800';
+        }
+
+        fetchData();
+        setInterval(fetchData, 5000); // Poll every 5s
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-dotenv
+firebase-admin
+gTTS
+dnspython
+certifi
+requests
+pydantic
+sendgrid
+twilio

@@ -1,0 +1,110 @@
+{
+  "demo-session-1": {
+    "session_id": "demo-session-1",
+    "user_id": "demo-user",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello, I want to buy a villa.",
+        "timestamp": "2025-12-08T08:27:18.596607"
+      },
+      {
+        "role": "assistant",
+        "content": "Marhaba! Thank you for considering Everest View Property for your villa purchase. To better assist you, could you please tell me what type of investment you're looking at? Are you interested in a Ready/Secondary villa or an Off-plan one?\n\nPlease respond with either \"Ready/Secondary\" or \"Off-plan\", and we'll proceed from there!",
+        "timestamp": "2025-12-08T08:27:18.598650"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": null,
+      "property_type": "Villa",
+      "bedrooms": null,
+      "target_location": null,
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 10
+    },
+    "created_at": "2025-12-08T07:25:11.190540",
+    "updated_at": "2025-12-08T08:27:18.598859"
+  },
+  "d5f481e3-de96-4fff-b6c2-45af7711e16f": {
+    "session_id": "d5f481e3-de96-4fff-b6c2-45af7711e16f",
+    "user_id": "c6899988-3a70-44c6-b06e-13030379ac03",
+    "messages": [
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-08T09:40:30.689962"
+      },
+      {
+        "role": "assistant",
+        "content": "Marhaba! I'm excited to help you find your next Dubai property. To better assist you, I need to know more about what you're looking for.\n\nLet's start with the type of investment you're interested in: Off-plan or Ready/Secondary?",
+        "timestamp": "2025-12-08T09:40:30.689992"
+      },
+      {
+        "role": "user",
+        "content": "Ready ",
+        "timestamp": "2025-12-08T09:41:03.465961"
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you for letting me know that you're interested in a Ready/Secondary property! That helps narrow down our search.\n\nNext, can you please share your budget range for this purchase? For example, is it around 1.5M-2.0M AED or something else?",
+        "timestamp": "2025-12-08T09:41:03.466046"
+      },
+      {
+        "role": "user",
+        "content": "70000 AED",
+        "timestamp": "2025-12-08T09:42:03.095804"
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you for sharing your budget of approximately 70,000 AED!\n\nThat's a specific range, and I appreciate the clarity. Since that's below our typical sales price range, I'd like to confirm: are you looking at smaller studios or perhaps apartments in older buildings?\n\nPlease let me know if you're interested in something with a specific number of bedrooms (e.g., 1-bedroom, 2-bedroom)?",
+        "timestamp": "2025-12-08T09:42:03.095817"
+      },
+      {
+        "role": "user",
+        "content": "3bhk",
+        "timestamp": "2025-12-08T09:44:01.617118"
+      },
+      {
+        "role": "assistant",
+        "content": "So, you're looking for a Ready/Secondary property with 3+ Bedrooms! That's a great starting point.\n\nNow, let's talk about location. Are you interested in a specific area or community within Dubai? For example, Downtown, Dubai Marina, JVC, or maybe something else?\n\nPlease share your preferred location or community, and I'll do my best to find a property that fits your needs!",
+        "timestamp": "2025-12-08T09:44:01.617135"
+      },
+      {
+        "role": "user",
+        "content": "Marina",
+        "timestamp": "2025-12-08T09:45:15.900848"
+      },
+      {
+        "role": "assistant",
+        "content": "Dubai Marina is a popular and vibrant area!\n\nWith your preferences in mind, I'd like to confirm: Are you looking for an Apartment or perhaps a Villa/Townhouse in Dubai Marina?\n\n(Please note that our typical sales price range in Dubai Marina might be higher than your budget of 70,000 AED. However, I'll still do my best to find something that fits your needs!)\n\nLet me know if you're interested in Apartments or Villas/Townhouses!",
+        "timestamp": "2025-12-08T09:45:15.900863"
+      },
+      {
+        "role": "user",
+        "content": "Town house",
+        "timestamp": "2025-12-08T09:46:10.723224"
+      },
+      {
+        "role": "assistant",
+        "content": "You're looking for a Townhouse in Dubai Marina!\n\nI've got all the necessary information from you. Let me summarize:\n\n* Investment Type: Ready/Secondary\n* Budget: 70,000 AED\n* Property Type: Townhouse\n* Bedrooms: 3+\n* Location: Dubai Marina\n\nThank you for providing this detailed profile! Based on your preferences, I will pass this information to a Senior Broker who will contact you within the hour to discuss tailored options.\n\nThank you.",
+        "timestamp": "2025-12-08T09:46:10.723238"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": "Ready/Secondary",
+      "budget_range": "70000 AED",
+      "property_type": null,
+      "bedrooms": null,
+      "target_location": null,
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 20
+    },
+    "created_at": "2025-12-08T09:39:23.883274",
+    "updated_at": "2025-12-08T09:46:10.723244"
+  }
+}
