@@ -1,4 +1,9 @@
-from pymongo import MongoClient, IndexModel, ASCENDING
+try:
+    from pymongo import MongoClient, IndexModel, ASCENDING
+except ImportError:
+    MongoClient = None
+    IndexModel = None
+    ASCENDING = None
 from config.settings import config
 from datetime import datetime, timedelta
 import hashlib
@@ -7,13 +12,14 @@ import certifi
 class MongoCacheService:
     def __init__(self):
         try:
-            self.client = MongoClient(config.MONGO_URI, serverSelectionTimeoutMS=2000, tlsCAFile=certifi.where())
-            self.db = self.client[config.MONGO_DB_NAME]
-            self.collection = self.db.cache
-            # Create TTL index (7 days)
-            self.collection.create_index("created_at", expireAfterSeconds=7 * 24 * 3600)
-            self.client.server_info() # Trigger connection check
-            print("MongoDB initialized successfully.")
+            # self.client = MongoClient(config.MONGO_URI, serverSelectionTimeoutMS=2000, tlsCAFile=certifi.where())
+            # self.db = self.client[config.MONGO_DB_NAME]
+            # self.collection = self.db.cache
+            # # Create TTL index (7 days)
+            # self.collection.create_index("created_at", expireAfterSeconds=7 * 24 * 3600)
+            # self.client.server_info() # Trigger connection check
+            # print("MongoDB initialized successfully.")
+            raise Exception("Caching disabled for verification")
         except Exception as e:
             print(f"Warning: MongoDB initialization failed ({e}). Caching disabled.")
             self.collection = None

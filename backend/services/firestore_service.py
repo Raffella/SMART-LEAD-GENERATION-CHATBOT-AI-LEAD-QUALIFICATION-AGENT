@@ -1,11 +1,19 @@
-import firebase_admin
-from firebase_admin import credentials, firestore
+try:
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+except ImportError:
+    firebase_admin = None
+    firestore = None
 from models.schemas import Session, Message, LeadProfile
 from config.settings import config
 from datetime import datetime
 import json
 import os
-from pymongo import MongoClient
+try:
+    from pymongo import MongoClient
+except ImportError:
+    MongoClient = None
+
 
 import certifi
 
@@ -28,17 +36,17 @@ class FirestoreService:
         except Exception:
             pass
 
-        # 2. Try MongoDB
-        try:
-            self.mongo_client = MongoClient(config.MONGO_URI, serverSelectionTimeoutMS=2000, tlsCAFile=certifi.where())
-            self.mongo_client.server_info() # Trigger check
-            self.mongo_db = self.mongo_client[config.MONGO_DB_NAME]
-            self.mongo_coll = self.mongo_db.sessions
-            self.mode = "MONGODB"
-            print("Using: MongoDB (Sessions)")
-            return
-        except Exception as e:
-            print(f"MongoDB connection failed: {e}")
+        # 2. Try MongoDB (Disabled for stability during dev/test)
+        # try:
+        #     self.mongo_client = MongoClient(config.MONGO_URI, serverSelectionTimeoutMS=2000, tlsCAFile=certifi.where())
+        #     self.mongo_client.server_info() # Trigger check
+        #     self.mongo_db = self.mongo_client[config.MONGO_DB_NAME]
+        #     self.mongo_coll = self.mongo_db.sessions
+        #     self.mode = "MONGODB"
+        #     print("Using: MongoDB (Sessions)")
+        #     return
+        # except Exception as e:
+        #     print(f"MongoDB connection failed: {e}")
 
         # 3. Fallback to File
         print("Using: File-based Mock DB")

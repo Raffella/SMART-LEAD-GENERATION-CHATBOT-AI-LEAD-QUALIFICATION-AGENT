@@ -28,6 +28,9 @@ class LeadProfile(BaseModel):
     language_preference: str = "en"
     urgency: Optional[str] = None
     lead_score: int = 0
+    name: Optional[str] = None
+    phone_number: Optional[str] = None
+    email: Optional[str] = None
 
 class Session(BaseModel):
     session_id: str

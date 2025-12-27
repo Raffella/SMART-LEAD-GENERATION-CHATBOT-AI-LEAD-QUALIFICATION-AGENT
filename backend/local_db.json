@@ -106,5 +106,360 @@
     },
     "created_at": "2025-12-08T09:39:23.883274",
     "updated_at": "2025-12-08T09:46:10.723244"
+  },
+  "dbee599a-1e81-4694-ad0d-ad32f12fb4cb": {
+    "session_id": "dbee599a-1e81-4694-ad0d-ad32f12fb4cb",
+    "user_id": "90883eed-ec82-476b-b251-e23d97e7b68a",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hi, I am looking for a property.",
+        "timestamp": "2025-12-26T14:47:59.391845"
+      },
+      {
+        "role": "assistant",
+        "content": "Investment type (Off-plan or Ready/Secondary)?",
+        "timestamp": "2025-12-26T14:47:59.391858"
+      },
+      {
+        "role": "user",
+        "content": "Budget > $1M, Urgency: Immediate, Location: Downtown.",
+        "timestamp": "2025-12-26T14:50:55.427030"
+      },
+      {
+        "role": "assistant",
+        "content": "Since you've provided multiple answers for budget, I'll ask about urgency again to clarify: \n\nUrgency:",
+        "timestamp": "2025-12-26T14:50:55.427048"
+      },
+      {
+        "role": "user",
+        "content": "Immediate",
+        "timestamp": "2025-12-26T14:51:12.223830"
+      },
+      {
+        "role": "assistant",
+        "content": "Investment Type (Off-plan or Ready/Secondary)?",
+        "timestamp": "2025-12-26T14:51:12.223848"
+      },
+      {
+        "role": "user",
+        "content": "Ready",
+        "timestamp": "2025-12-26T14:51:56.162524"
+      },
+      {
+        "role": "assistant",
+        "content": "That's likely a mistake. Investment Type (Off-plan or Ready/Secondary), please?",
+        "timestamp": "2025-12-26T14:51:56.162538"
+      },
+      {
+        "role": "user",
+        "content": "Off-plan",
+        "timestamp": "2025-12-26T14:52:50.199157"
+      },
+      {
+        "role": "assistant",
+        "content": "Property Type (Apartment, Villa, Townhouse, or Land)?",
+        "timestamp": "2025-12-26T14:52:50.199170"
+      },
+      {
+        "role": "user",
+        "content": "I am looking for a 3 Bedroom Villa.",
+        "timestamp": "2025-12-26T14:56:43.491521"
+      },
+      {
+        "role": "assistant",
+        "content": "Bedrooms: How many bedrooms are you looking for in your villa?",
+        "timestamp": "2025-12-26T14:56:43.491537"
+      },
+      {
+        "role": "user",
+        "content": "3",
+        "timestamp": "2025-12-26T14:57:07.039610"
+      },
+      {
+        "role": "assistant",
+        "content": "You've repeated the bedroom count. Since we already confirmed 3 bedrooms, let's move on to:\n\nTarget Location (Specific area or neighborhood)?",
+        "timestamp": "2025-12-26T14:57:07.039623"
+      }
+    ],
+    "qualification_status": "QUALIFIED",
+    "lead_profile": {
+      "investment_type": "Off-plan",
+      "budget_range": "Budget > $1M, Urgency: Immediate, Location: Downtown.",
+      "property_type": "Villa",
+      "bedrooms": "3 Bedroom(s)",
+      "target_location": "Downtown",
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 80
+    },
+    "created_at": "2025-12-26T14:47:43.516799",
+    "updated_at": "2025-12-26T14:57:07.039629"
+  },
+  "542c93d0-da90-40ca-aadf-a1700c96ae3b": {
+    "session_id": "542c93d0-da90-40ca-aadf-a1700c96ae3b",
+    "user_id": "c1b95479-c55e-4feb-94a2-acc10aedf612",
+    "messages": [
+      {
+        "role": "user",
+        "content": "My name is John Doe, number is +97150000000, email is  john@example.com",
+        "timestamp": "2025-12-26T15:12:32.057145"
+      },
+      {
+        "role": "assistant",
+        "content": "Duplicate entries. Please provide the required information to move forward.\n\nCurrent Lead Profile State:\n- Investment Type: Unknown\n- Budget: Unknown\n- Property Type: Unknown\n- Bedrooms: Unknown\n- Location: Unknown\n\nPlease answer: What type of investment are you looking for (Off-plan or Ready/Secondary)?",
+        "timestamp": "2025-12-26T15:12:32.057161"
+      },
+      {
+        "role": "user",
+        "content": "I want a 4 bedroom villa in Marina, budget is 5 million",
+        "timestamp": "2025-12-26T15:13:05.190767"
+      },
+      {
+        "role": "assistant",
+        "content": "Duplicate entries. Please provide the required information to move forward.\n\nCurrent Lead Profile State:\n- Investment Type: Off-plan or Ready/Secondary (Please confirm)\n- Budget: $5M\n- Property Type: Villa\n- Bedrooms: 4\n- Location: Marina\n\nPlease answer: What is your preferred location within Marina?",
+        "timestamp": "2025-12-26T15:13:05.190778"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": "I want a 4 bedroom villa in Marina, budget is 5 million",
+      "property_type": "Villa",
+      "bedrooms": "4 Bedroom(s)",
+      "target_location": "Marina",
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 100,
+      "name": "John Doe",
+      "phone_number": "+97150000000",
+      "email": "john@example.com"
+    },
+    "created_at": "2025-12-26T15:12:04.815459",
+    "updated_at": "2025-12-26T15:13:05.190785"
+  },
+  "569b58c3-a43e-41c8-bb4c-20109cd4485a": {
+    "session_id": "569b58c3-a43e-41c8-bb4c-20109cd4485a",
+    "user_id": "cc95a4ab-c4b8-472e-883f-cc0613c61fc1",
+    "messages": [
+      {
+        "role": "user",
+        "content": "My name is Raffella and I want a 4 bedroom villa in Marina, budget is 5 million",
+        "timestamp": "2025-12-26T15:17:35.341070"
+      },
+      {
+        "role": "assistant",
+        "content": "I'd like to confirm the target location is indeed Marina. Is the property type you're interested in a specific type of villa or would you prefer a range?",
+        "timestamp": "2025-12-26T15:17:35.341082"
+      },
+      {
+        "role": "user",
+        "content": "no just villa ",
+        "timestamp": "2025-12-26T15:18:15.511401"
+      },
+      {
+        "role": "assistant",
+        "content": "How many bedrooms are you looking for in your villa, was that confirmed at 4 already?",
+        "timestamp": "2025-12-26T15:18:15.511418"
+      },
+      {
+        "role": "user",
+        "content": "yes",
+        "timestamp": "2025-12-26T15:18:29.677857"
+      },
+      {
+        "role": "assistant",
+        "content": "Would you like to explore any additional amenities or features for the villa, such as a pool or garden view?",
+        "timestamp": "2025-12-26T15:18:29.677876"
+      },
+      {
+        "role": "user",
+        "content": "no",
+        "timestamp": "2025-12-26T15:18:41.371060"
+      },
+      {
+        "role": "assistant",
+        "content": "How did I miss that response? Can you please tell me your name again and would you say you are looking to invest in an off-plan property or are you ready to buy a existing one?",
+        "timestamp": "2025-12-26T15:18:41.371079"
+      },
+      {
+        "role": "user",
+        "content": "raffella",
+        "timestamp": "2025-12-26T15:18:59.326213"
+      },
+      {
+        "role": "assistant",
+        "content": "I apologize for the repetition. Would you be willing to share your budget range, is it $5 million or would that be on the lower or higher end of what you're looking at?",
+        "timestamp": "2025-12-26T15:18:59.326229"
+      },
+      {
+        "role": "user",
+        "content": "higher",
+        "timestamp": "2025-12-26T15:19:26.312292"
+      },
+      {
+        "role": "assistant",
+        "content": "Is the target location still just Marina, or are there any other nearby areas you'd also like to consider?",
+        "timestamp": "2025-12-26T15:19:26.312305"
+      },
+      {
+        "role": "user",
+        "content": "marina",
+        "timestamp": "2025-12-26T15:19:35.616544"
+      },
+      {
+        "role": "assistant",
+        "content": "So Marina is confirmed. Would you like to explore a specific part of Marina, such as a particular neighborhood or waterfront area?",
+        "timestamp": "2025-12-26T15:19:35.616557"
+      },
+      {
+        "role": "user",
+        "content": "no",
+        "timestamp": "2025-12-26T15:19:46.544523"
+      },
+      {
+        "role": "assistant",
+        "content": "Would you be open to considering villa types outside of the traditional 4 bedroom villas, such as larger or smaller options, or perhaps something more luxurious?",
+        "timestamp": "2025-12-26T15:19:46.544536"
+      },
+      {
+        "role": "user",
+        "content": "no",
+        "timestamp": "2025-12-26T15:19:56.611280"
+      },
+      {
+        "role": "assistant",
+        "content": "That helps clarify. Are there any specific location boundaries you'd like me to consider for your villa search, such as a maximum distance from the marina waterfront?",
+        "timestamp": "2025-12-26T15:19:56.611292"
+      },
+      {
+        "role": "user",
+        "content": "no",
+        "timestamp": "2025-12-26T15:20:12.386268"
+      },
+      {
+        "role": "assistant",
+        "content": "I think we've covered everything, Raffella! Let me summarize: Investment Type is None (Off-plan/Ready), Budget is Higher than $5 million, Property Type is Villa, Bedrooms are 4, Location is Marina. I'll send this info to our property team and we can start searching for your ideal villa.",
+        "timestamp": "2025-12-26T15:20:12.386284"
+      },
+      {
+        "role": "user",
+        "content": "yes",
+        "timestamp": "2025-12-26T15:20:33.317573"
+      },
+      {
+        "role": "assistant",
+        "content": "I'll proceed with qualifying you as a potential buyer and start searching for villas that match your criteria. This may take a few minutes, thank you for your patience!",
+        "timestamp": "2025-12-26T15:20:33.317586"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": "My name is Raffella and I want a 4 bedroom villa in Marina, budget is 5 million",
+      "property_type": "Villa",
+      "bedrooms": "4 Bedroom(s)",
+      "target_location": "Marina",
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 80,
+      "name": "Raffella And",
+      "phone_number": null,
+      "email": null
+    },
+    "created_at": "2025-12-26T15:17:24.169024",
+    "updated_at": "2025-12-26T15:20:33.317591"
+  },
+  "44db18b7-2a21-4aa0-84c3-d6f042c1a7eb": {
+    "session_id": "44db18b7-2a21-4aa0-84c3-d6f042c1a7eb",
+    "user_id": "eb3d3d5d-ce63-4c0d-9079-6aaaf60efc75",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I want a 4 Bedroom Villa.",
+        "timestamp": "2025-12-26T15:33:01.080043"
+      },
+      {
+        "role": "assistant",
+        "content": "It seems like you've mentioned the type of property twice. Let me clarify:\n\nYou're looking for a 4 Bedroom Villa, correct?\n\nCan I ask, what is your budget for this villa?",
+        "timestamp": "2025-12-26T15:33:01.080078"
+      },
+      {
+        "role": "user",
+        "content": "I want a 4 Bedroom Villa.",
+        "timestamp": "2025-12-26T15:33:57.876116"
+      },
+      {
+        "role": "assistant",
+        "content": "It seems like you've repeated yourself. Can you please tell me just once, and I'll do my best to assist you:\n\nWhat is your phone number, so we can discuss the details of your desired 4 Bedroom Villa?",
+        "timestamp": "2025-12-26T15:33:57.876129"
+      },
+      {
+        "role": "user",
+        "content": "I want a 4 Bedroom Villa.",
+        "timestamp": "2025-12-26T15:34:31.901750"
+      },
+      {
+        "role": "assistant",
+        "content": "It seems like we've reached a loop. Let me try again in a different way:\n\nCan you please tell me your phone number so we can move forward with finding your desired 4 Bedroom Villa? \n\n(If you need to repeat something, I'll let you know and we'll keep trying until we get the info we need.)",
+        "timestamp": "2025-12-26T15:34:31.901762"
+      },
+      {
+        "role": "user",
+        "content": "Raffella, +918072738270",
+        "timestamp": "2025-12-26T15:35:01.439852"
+      },
+      {
+        "role": "assistant",
+        "content": "I have your name and phone number now:\n\nName: Raffella\nPhone Number: +918072738270\n\nNow that I have your contact information, let's move forward with finding your desired 4 Bedroom Villa.\n\nCan you please tell me what is your budget for this villa?",
+        "timestamp": "2025-12-26T15:35:01.439864"
+      },
+      {
+        "role": "user",
+        "content": "$5 million",
+        "timestamp": "2025-12-26T15:35:44.477937"
+      },
+      {
+        "role": "assistant",
+        "content": "I've got it! Your budget for the 4 Bedroom Villa is $5 million.\n\nTo confirm:\n\n* You're looking for a 4 Bedroom Villa\n* Your budget is $5 million\n\nIs there anything else you'd like to know or any specific requirements (e.g., location, amenities) that I should be aware of?",
+        "timestamp": "2025-12-26T15:35:44.477951"
+      },
+      {
+        "role": "user",
+        "content": "I want a 4 Bedroom Villa.",
+        "timestamp": "2025-12-26T15:37:53.478267"
+      },
+      {
+        "role": "assistant",
+        "content": "It seems like we're back to the loop again. Let me try to break the cycle.\n\nSince you've already told us that you want a 4 Bedroom Villa, I'll just summarize:\n\n* You want a 4 Bedroom Villa\n* Your budget is $5 million\n\nTo confirm your request, can you please tell me: How would you like to proceed with finding your desired 4 Bedroom Villa? Would you like me to start searching for properties within your budget and location preferences?",
+        "timestamp": "2025-12-26T15:37:53.478283"
+      },
+      {
+        "role": "user",
+        "content": "Raffella, +918072738270",
+        "timestamp": "2025-12-26T15:38:23.728374"
+      },
+      {
+        "role": "assistant",
+        "content": "I have your name and phone number again:\n\nName: Raffella\nPhone Number: +918072738270\n\nIt seems like we've reached a repetition point. I'll try to move forward with the original information:\n\n* You want a 4 Bedroom Villa\n* Your budget is $5 million\n\nSince you didn't provide any additional details or change your mind, I'll assume that we're good to proceed.\n\nNext steps:\n\n* I'll start searching for properties within your budget and location preferences.\n* I'll send you some options shortly.\n\nIs there anything else you'd like me to do in the meantime?",
+        "timestamp": "2025-12-26T15:38:23.728393"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": "$5 million",
+      "property_type": "Villa",
+      "bedrooms": "4 Bedroom(s)",
+      "target_location": null,
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 110,
+      "name": null,
+      "phone_number": "+918072738270",
+      "email": null
+    },
+    "created_at": "2025-12-26T15:32:39.684632",
+    "updated_at": "2025-12-26T15:38:23.728402"
   }
 }

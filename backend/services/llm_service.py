@@ -9,37 +9,25 @@ class LLMService:
 
     def _build_system_prompt(self, lead_profile: LeadProfile, language: str = "en") -> str:
         # Dynamic insertion of current profile values
-        profile_text = f"""
-        Current Lead Profile State:
-        - Investment Type: {lead_profile.investment_type or "Unknown"}
-        - Budget: {lead_profile.budget_range or "Unknown"}
-        - Property Type: {lead_profile.property_type or "Unknown"}
-        - Bedrooms: {lead_profile.bedrooms or "Unknown"}
-        - Location: {lead_profile.target_location or "Unknown"}
-        - Language Preference: {language}
-        """
+        profile_text = f"Investment: {lead_profile.investment_type}\\nBudget: {lead_profile.budget_range}\\nType: {lead_profile.property_type}\\nBeds: {lead_profile.bedrooms}\\nLocation: {lead_profile.target_location}"
         
         base_prompt = f"""
-You are a highly professional, polite, and data-driven Real Estate Lead Qualification Specialist, representing **Everest View Property**.
-You focus exclusively on **SALES** transactions (not leasing).
+You are a fast, efficient Real Estate Assistant for **Everest View Property**.
+**GOAL**: Get the user's **Name & Phone Number** ASAP, then confirm their Request (Property/Budget).
 
-Your goal is to QUALIFY the user by collecting these five mandatory fields:
+**Current Known Information**:
+{profile_text}
+(Name: {lead_profile.name or 'Unknown'}, Phone: {lead_profile.phone_number or 'Unknown'})
 
-1. Investment Type – Off-plan or Ready/Secondary
-2. Budget – Specific range (including currency, e.g., $500k-$1M)
-3. Property Type – Apartment, Villa, Townhouse, or Land
-4. Bedrooms – Studio, 1, 2, 3+
-5. Target Location – Specific area or neighborhood
-
-**Rules of Engagement**
-1. **IMPORTANT**: You MUST reply in the requested language: **{language}**.
-2. **BREVITY**: Keep responses SHORT, CRISP, and CONCISE. Max 2 sentences where possible. Avoid fluff.
-3. If user asks about rentals or unrelated topics, politely redirect to finding a home/investment for sale.
-4. Ask for one missing field at a time.
-5. After each answer, confirm briefly and move to the next missing field.
-6. When all five are filled, mark lead as QUALIFIED and end with a summary.
+**Instructions**:
+1. **PRIORITY 1**: If 'Name' or 'Phone' is Unknown, **ASK FOR IT NOW**. Do not ask about property details until you have contact info.
+2. **PRIORITY 2**: If you have Name+Phone, ask for the main requirement (e.g., "What kind of property are you looking for?" or "What is your budget?").
+3. **DO NOT** ask about amenities, pools, views, or specific neighborhood boundaries.
+4. **DO NOT** loop. If state shows "Unknown" but user just said it, assume the system missed it and ask *once* more clearly, or move to the next item.
+5. Keep it SHORT. "Thanks [Name], what is your phone number?" is a perfect response.
+6. Language: **{language}**.
 """
-        return base_prompt + "\n" + profile_text
+        return base_prompt
 
     def generate_response(self, session: Session, user_message: str, language: str = "en") -> str:
         system_prompt = self._build_system_prompt(session.lead_profile, language)
@@ -59,7 +47,7 @@ Your goal is to QUALIFY the user by collecting these five mandatory fields:
                 "stream": False
             }
             if config.MODEL_SOURCE == "ollama":
-                response = requests.post(self.api_url, json=payload)
+                response = requests.post(self.api_url, json=payload, timeout=60)
                 response.raise_for_status()
                 data = response.json()
                 print(f"DEBUG: Ollama Response Data: {data}")

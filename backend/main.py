@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from models.schemas import ChatRequest, ChatResponse, Message, MessageRole, ProcessStatus
 from services.firestore_service import firestore_service
 from services.mongo_cache_service import mongo_cache_service
+from src.graph import graph # LangGraph Integation
 from services.llm_service import llm_service
 from services.lead_extraction import lead_extractor
 from services.notifications import notification_service
@@ -32,12 +33,10 @@ async def chat_endpoint(request: ChatRequest):
 
     # 1. Fetch Session
     session = firestore_service.get_or_create_session(user_id, session_id)
-    # Update language preference in profile if changed/provided
     if language != session.lead_profile.language_preference:
         session.lead_profile.language_preference = language
 
     # 2. Check Cache
-    # Include language in context hash to separate English vs Arabic responses
     last_assistant_msg = ""
     if session.messages and session.messages[-1].role == MessageRole.ASSISTANT:
         last_assistant_msg = session.messages[-1].content
@@ -55,14 +54,33 @@ async def chat_endpoint(request: ChatRequest):
             audioBase64=cached_reply_data.get("audioBase64")
         )
 
-    # 3. LLM Inference
-    llm_reply = llm_service.generate_response(session, user_message, language)
+    # 3. LangGraph Execution
+    # Prepare State
+    msgs = [{"role": m.role, "content": m.content} for m in session.messages]
+    msgs.append({"role": "user", "content": user_message})
+
+    initial_state = {
+        "session_id": session_id,
+        "messages": msgs,
+        "lead_profile": session.lead_profile,
+        "qualification_status": session.qualification_status,
+        "extraction_attempts": 0, # In a real app, persist this
+        "model_used": "Local-Llama",
+        "latest_reply": "",
+        "audio_base64": None,
+        "language": language
+    }
+
+    print(">>> INVOKING LANGGRAPH <<<")
+    final_state = graph.invoke(initial_state)
+    
+    llm_reply = final_state["latest_reply"]
+    updated_profile = final_state["lead_profile"]
+    new_status = final_state["qualification_status"]
 
     # 4. Audio Generation (Text-to-Speech)
     audio_base64 = None
     try:
-        # Generate audio using gTTS
-        # Map simple codes if needed: 'ar' is supported, 'fr' supported.
         tts = gTTS(text=llm_reply, lang=language, slow=False)
         audio_fp = io.BytesIO()
         tts.write_to_fp(audio_fp)
@@ -71,28 +89,15 @@ async def chat_endpoint(request: ChatRequest):
     except Exception as e:
         print(f"TTS Generation failed: {e}")
 
-    # 5. Post-processing & Extraction
-    updated_profile = lead_extractor.extract_data(user_message, session.lead_profile)
-    updated_profile.lead_score = lead_extractor.calculate_lead_score(updated_profile)
-    updated_profile.language_preference = language # Ensure persistence
-    
-    previous_status = session.qualification_status
-    new_status = lead_extractor.check_qualification_status(updated_profile)
-    
-    session.qualification_status = new_status
+    # 5. Save everything
     session.lead_profile = updated_profile
-
-    # 6. Save everything
+    session.qualification_status = new_status
     session.messages.append(Message(role=MessageRole.USER, content=user_message))
     session.messages.append(Message(role=MessageRole.ASSISTANT, content=llm_reply))
     
     firestore_service.save_session(session)
 
-    # 7. Notifications
-    if new_status == ProcessStatus.QUALIFIED and previous_status != ProcessStatus.QUALIFIED:
-        notification_service.send_qualified_lead_notification(updated_profile, session_id)
-
-    # 8. Cache Response
+    # 6. Cache Response
     response_payload = {
         "reply": llm_reply,
         "audioBase64": audio_base64

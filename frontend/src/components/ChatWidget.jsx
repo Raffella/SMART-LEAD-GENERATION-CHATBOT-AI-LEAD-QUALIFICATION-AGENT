@@ -193,6 +193,7 @@ export default function ChatWidget() {
                         {messages.map((msg, idx) => (
                             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                 <div
+                                    dir={/[\u0600-\u06FF]/.test(msg.content) ? 'rtl' : 'ltr'}
                                     className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed shadow-sm flex items-start gap-2 ${msg.role === 'user'
                                         ? 'bg-blue-600 text-white rounded-tr-none'
                                         : 'bg-[#1e3a5f] text-gray-100 rounded-tl-none border border-blue-900/50'

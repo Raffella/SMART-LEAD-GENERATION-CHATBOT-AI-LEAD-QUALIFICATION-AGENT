@@ -1,8 +1,17 @@
 fastapi
 uvicorn
-python-dotenv
-firebase-admin
+python-multipart
+# google-cloud-firestore # Commented out as we are moving to Supabase/Mock for this step or keeping it hybrid? 
+# Keeping existing deps to avoid breakage, adding new ones
+requests
 gTTS
+langgraph
+langchain
+supabase
+twilio
+resend
+python-dotenv
+puter
 dnspython
 certifi
 requests

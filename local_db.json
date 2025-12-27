@@ -1,0 +1,248 @@
+{
+  "verify-session-456": {
+    "session_id": "verify-session-456",
+    "user_id": "verify-user-2",
+    "messages": [],
+    "qualification_status": "INITIAL",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": null,
+      "property_type": null,
+      "bedrooms": null,
+      "target_location": null,
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 0
+    },
+    "created_at": "2025-12-23T09:59:31.394277",
+    "updated_at": "2025-12-23T09:59:31.394282"
+  },
+  "verify-session-789": {
+    "session_id": "verify-session-789",
+    "user_id": "verify-user-final",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I want to buy a villa",
+        "timestamp": "2025-12-23T10:00:27.499183"
+      },
+      {
+        "role": "assistant",
+        "content": "I apologize, but I am having trouble connecting to my brain right now. Please try again in a moment.",
+        "timestamp": "2025-12-23T10:00:27.499202"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": null,
+      "property_type": "Villa",
+      "bedrooms": null,
+      "target_location": null,
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 10
+    },
+    "created_at": "2025-12-23T10:00:21.973689",
+    "updated_at": "2025-12-23T10:00:27.499209"
+  },
+  "dbee599a-1e81-4694-ad0d-ad32f12fb4cb": {
+    "session_id": "dbee599a-1e81-4694-ad0d-ad32f12fb4cb",
+    "user_id": "90883eed-ec82-476b-b251-e23d97e7b68a",
+    "messages": [
+      {
+        "role": "user",
+        "content": "yes",
+        "timestamp": "2025-12-23T10:30:07.651532"
+      },
+      {
+        "role": "assistant",
+        "content": "I apologize, but I am having trouble connecting to my brain right now. Please try again in a moment.",
+        "timestamp": "2025-12-23T10:30:07.651548"
+      },
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-23T10:30:16.421703"
+      },
+      {
+        "role": "assistant",
+        "content": "I apologize, but I am having trouble connecting to my brain right now. Please try again in a moment.",
+        "timestamp": "2025-12-23T10:30:16.421719"
+      },
+      {
+        "role": "user",
+        "content": "huloo",
+        "timestamp": "2025-12-23T10:30:34.227587"
+      },
+      {
+        "role": "assistant",
+        "content": "I apologize, but I am having trouble connecting to my brain right now. Please try again in a moment.",
+        "timestamp": "2025-12-23T10:30:34.227603"
+      },
+      {
+        "role": "user",
+        "content": "hi",
+        "timestamp": "2025-12-23T10:32:36.588180"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "timestamp": "2025-12-23T10:32:36.588206"
+      },
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-23T10:32:56.443899"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "timestamp": "2025-12-23T10:32:56.443919"
+      },
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-23T10:33:40.917558"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "timestamp": "2025-12-23T10:33:40.917569"
+      },
+      {
+        "role": "user",
+        "content": "hi",
+        "timestamp": "2025-12-23T10:34:01.573876"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "timestamp": "2025-12-23T10:34:01.573888"
+      },
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-23T10:36:45.054087"
+      },
+      {
+        "role": "assistant",
+        "content": "Let's focus on qualifying your lead.\n\nYou mentioned \"buy\" twice, which suggests you're looking to purchase a property. Let's confirm that!\n\nAssuming you're looking to buy, can you please tell me what type of investment are you looking for? Is it an off-plan (newly developed) property or a ready/secondary (existing) one?\n\nPlease respond with either \"Off-plan\" or \"Ready/Secondary\".",
+        "timestamp": "2025-12-23T10:36:45.054104"
+      },
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-23T10:49:34.942523"
+      },
+      {
+        "role": "assistant",
+        "content": "I apologize, but I am having trouble connecting to my brain right now. Please try again in a moment.",
+        "timestamp": "2025-12-23T10:49:34.942893"
+      },
+      {
+        "role": "user",
+        "content": "buy",
+        "timestamp": "2025-12-23T11:03:42.723817"
+      },
+      {
+        "role": "assistant",
+        "content": "You've confirmed you're looking to buy.\n\nTo better understand your requirements, can you please specify your budget for the property? What is the approximate price range you're looking to spend? For example, $500k-$1M?",
+        "timestamp": "2025-12-23T11:03:42.723839"
+      },
+      {
+        "role": "user",
+        "content": "hello",
+        "timestamp": "2025-12-23T11:03:56.287568"
+      },
+      {
+        "role": "assistant",
+        "content": "I think there's been a miscommunication. I asked about your budget earlier.\n\nCan you please tell me what type of property are you interested in buying (Apartment, Villa, Townhouse, or Land)?",
+        "timestamp": "2025-12-23T11:03:56.287589"
+      },
+      {
+        "role": "user",
+        "content": "villa",
+        "timestamp": "2025-12-23T11:04:34.201673"
+      },
+      {
+        "role": "assistant",
+        "content": "You've confirmed you're interested in buying a villa.\n\nTo further qualify your lead, can you please provide the number of bedrooms you're looking for in a villa? Studio, 1, 2, or more?",
+        "timestamp": "2025-12-23T11:04:34.201691"
+      },
+      {
+        "role": "user",
+        "content": "1",
+        "timestamp": "2025-12-23T11:05:49.410669"
+      },
+      {
+        "role": "assistant",
+        "content": "I think there's been a miscommunication. You've only answered one question correctly. Please answer the remaining questions again:\n\nCan you please provide the number of bedrooms you're looking for in a villa?\n\nAlso, I'll reiterate your previous correct answers: \n\n* Budget was not provided\n* Property Type is Villa\n* Bedrooms is 1\n* Location is unknown",
+        "timestamp": "2025-12-23T11:05:49.410688"
+      },
+      {
+        "role": "user",
+        "content": "i need a villa",
+        "timestamp": "2025-12-23T11:07:38.797667"
+      },
+      {
+        "role": "assistant",
+        "content": "I think there's been a miscommunication. You're repeating the same answer, which isn't helpful.\n\nTo clarify:\n\nYou said earlier that you're looking for a property with 1 bedroom. Can you please provide the correct information about your budget?\n\nPrevious answers:\n* Property Type is Villa\n* Bedrooms is 1",
+        "timestamp": "2025-12-23T11:07:38.797691"
+      },
+      {
+        "role": "user",
+        "content": "budget 100000 rs",
+        "timestamp": "2025-12-23T11:08:33.820219"
+      },
+      {
+        "role": "assistant",
+        "content": "I think there's been a miscommunication. You're repeating the same answer for the budget.\n\nTo clarify:\n\nYou said earlier that you're looking for a property with 1 bedroom and a budget of $500k-$1M (not Rs). Can you please confirm your budget is indeed $500k-$1M?\n\nPrevious answers:\n* Property Type is Villa\n* Bedrooms is 1\n\nPlease respond with a specific number or range.",
+        "timestamp": "2025-12-23T11:08:33.820237"
+      },
+      {
+        "role": "user",
+        "content": "$690k",
+        "timestamp": "2025-12-23T11:09:10.637830"
+      },
+      {
+        "role": "assistant",
+        "content": "I think there's been a miscommunication again. You repeated the same answer.\n\nTo clarify:\n\nYou mentioned earlier that your budget is $500k-$1M, not $690k.\n\nPrevious answers:\n* Property Type is Villa\n* Bedrooms is 1\n* Budget was confirmed as $500k-$1M\n\nCan you please specify a different location for your villa?",
+        "timestamp": "2025-12-23T11:09:10.637849"
+      },
+      {
+        "role": "user",
+        "content": "dubai marina",
+        "timestamp": "2025-12-23T11:10:17.029110"
+      },
+      {
+        "role": "assistant",
+        "content": "You've repeated the same answer twice.\n\nTo clarify:\n\nDubai Marina is a known location. Can you please provide a more specific address or neighborhood within Dubai Marina?\n\nPrevious answers:\n* Property Type is Villa\n* Bedrooms is 1\n* Budget is $500k-$1M\n* Location is Dubai Marina",
+        "timestamp": "2025-12-23T11:10:17.029130"
+      },
+      {
+        "role": "user",
+        "content": "hi",
+        "timestamp": "2025-12-23T15:04:45.476465"
+      },
+      {
+        "role": "assistant",
+        "content": "It seems like there's been no progress on qualifying your lead. Can you please provide the number of bedrooms you're looking for in a villa?\n\nPrevious answers:\n* Property Type is Villa\n* Bedrooms is 1\n* Budget is $500k-$1M\n* Location is Dubai Marina",
+        "timestamp": "2025-12-23T15:04:45.476493"
+      }
+    ],
+    "qualification_status": "DISCOVERY",
+    "lead_profile": {
+      "investment_type": null,
+      "budget_range": "$690k",
+      "property_type": "Villa",
+      "bedrooms": null,
+      "target_location": "Marina",
+      "language_preference": "en",
+      "urgency": null,
+      "lead_score": 30
+    },
+    "created_at": "2025-12-23T10:30:07.127064",
+    "updated_at": "2025-12-23T15:04:45.477393"
+  }
+}
